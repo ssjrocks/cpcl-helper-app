@@ -69,6 +69,18 @@ powerapps-simulator\build\outputs\apk\debug\powerapps-simulator-debug.apk
 
 These APKs are signed with Android's debug signing key. They are suitable for testing on your tablet, but not for managed production deployment.
 
+## Prebuilt Debug APKs
+
+The repository also includes the latest debug APKs under:
+
+```text
+artifacts\debug\cpcl-helper-debug.apk
+artifacts\debug\powerapps-simulator-debug.apk
+artifacts\debug\SHA256SUMS.txt
+```
+
+Use these for quick tablet testing. Rebuild them with `.\build-debug-apk.ps1` after code changes, then copy the new APKs into `artifacts\debug` before committing.
+
 ## Power Apps Simulator
 
 The `powerapps-simulator` module is a separate Android app that mimics the Power Apps handoff. Install both APKs on the same tablet:

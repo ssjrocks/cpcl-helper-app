@@ -1,0 +1,2 @@
+f7bd0d045851ef9309abb2f827ad11c9a25d53209f15c4b579f37ae30a4255a6  cpcl-helper-debug.apk
+1aca7a4963dc839320ac5eb108b6e5214bac5203fb30cc32efe73d57274f2d6b  powerapps-simulator-debug.apk
