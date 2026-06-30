@@ -44,7 +44,7 @@ More detail is in:
 
 Open this folder in Android Studio, let Gradle sync, then run the `app` configuration on a tablet.
 
-This project intentionally uses plain Android Java with no external app libraries. That keeps the bridge simple for IT review and avoids adding a framework just to send text to a Bluetooth socket.
+This project intentionally uses plain Android Java with no external app libraries. That keeps the bridge simple for integration review and avoids adding a framework just to send text to a Bluetooth socket.
 
 ## Build The Test APKs
 
@@ -96,7 +96,7 @@ freightprint://print?code=APLP10056543001&copies=1
 
 That is the same handoff shape the real Power Apps button should use.
 
-## Notes for IT
+## Notes for Integration
 
 - The app uses a custom URL scheme: `freightprint://print`.
 - It sends CPCL over Bluetooth Classic Serial Port Profile using UUID `00001101-0000-1000-8000-00805F9B34FB`.

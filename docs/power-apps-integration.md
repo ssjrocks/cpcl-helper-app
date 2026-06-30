@@ -92,9 +92,9 @@ Open **Power Apps Simulator**, enter a label code and copies, then tap **Launch 
 
 This proves Android deep linking works before changing the real Power Apps app.
 
-## What IT May Need To Configure
+## What Integration May Need To Configure
 
-For managed work tablets, IT may need to:
+For managed work tablets, the deployment or integration administrator may need to:
 
 - allow installation of the helper APK
 - deploy the APK through MDM
@@ -110,7 +110,7 @@ For early testing, debug APK side-loading is fine.
 For workplace rollout:
 
 1. Create a release build.
-2. Sign it with an IT-controlled signing key.
+2. Sign it with an administrator-controlled signing key.
 3. Deploy through MDM or the organization's normal Android app deployment process.
 4. Keep the URL contract stable:
 

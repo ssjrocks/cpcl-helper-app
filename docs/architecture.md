@@ -112,4 +112,4 @@ The operator may see a very brief app switch depending on tablet speed and Andro
 - Bluetooth Classic SPP printers are supported.
 - BLE-only printers are not supported by the current transport.
 - CPCL is assumed. ZPL, ESC/POS, TSPL, or PDF/image printing would need separate templates/transports.
-- Debug APKs are for testing only. Production deployment should use a release-signed APK managed by IT.
+- Debug APKs are for testing only. Production deployment should use a release-signed APK managed by the deployment administrator.
