@@ -10,7 +10,10 @@ Microsoft Power Apps
 Android deep link intent
         |
         v
-CPCL Helper
+Hidden CPCL Helper receiver
+        |
+        v
+Short-lived print service
         |
         | Builds CPCL text
         v
@@ -37,11 +40,14 @@ The bridge app is in the `app` module.
 Important pieces:
 
 - `AndroidManifest.xml` registers `freightprint://print` as a browsable deep link.
+- `PrintLinkActivity` receives the deep link, starts a print service, and immediately closes.
+- `PrintJobService` performs the Bluetooth print without showing the setup screen.
 - `MainActivity` lists already paired Bluetooth devices.
 - The selected printer name and MAC address are saved in Android shared preferences.
-- `handlePrintIntent()` reads `code`, `label`, or `text` from the incoming deep link.
-- `buildCpcl()` creates the CPCL label.
-- `sendCpcl()` opens a Bluetooth Classic SPP socket and writes the CPCL as ASCII.
+- `CpclPrinter.buildCpcl()` creates the CPCL label.
+- `CpclPrinter.sendCpcl()` opens a Bluetooth Classic SPP socket and writes the CPCL as ASCII.
+
+The helper still has a visible screen for setup and manual test prints. Power Apps links use the hidden print receiver so operators are returned to the previous app quickly instead of landing on the setup screen.
 
 The simulator app is in the `powerapps-simulator` module. It does not print by itself. It only builds and launches the same deep link that Power Apps should launch.
 
@@ -88,6 +94,18 @@ The helper stores only:
 - saved printer MAC address
 
 It does not store printed label history or freight data.
+
+## Background Behavior
+
+Android requires a browsable deep link to resolve to an activity, so Power Apps cannot call a completely invisible Bluetooth function directly. CPCL Helper uses a small trampoline activity for the cleanest available behavior:
+
+1. Android receives `freightprint://print?...`.
+2. `PrintLinkActivity` starts.
+3. It passes the print request to `PrintJobService`.
+4. It immediately calls `finish()`.
+5. Android returns to the previous app while the print service sends CPCL.
+
+The operator may see a very brief app switch depending on tablet speed and Android version, but the setup screen is not shown.
 
 ## Limitations
 

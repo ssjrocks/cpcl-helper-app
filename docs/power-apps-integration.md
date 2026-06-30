@@ -14,6 +14,8 @@ This guide explains how a Microsoft Power Apps canvas app can call CPCL Helper o
 
 After this setup, Power Apps only needs to launch a URL.
 
+When Power Apps launches the URL, CPCL Helper uses a hidden receiver activity and short-lived print service. Operators should be returned to Power Apps immediately instead of being left on the CPCL Helper setup screen.
+
 ## Basic Power Apps Button
 
 For a button inside a gallery or form where `ThisItem.LoadId` is the label value:
@@ -123,3 +125,5 @@ If Power Apps opens a browser or says the link cannot be opened, CPCL Helper is 
 If CPCL Helper opens but does not print, open the helper directly and run **Test Print**.
 
 If **Test Print** fails, the issue is below Power Apps: Bluetooth permission, saved printer, pairing, printer firmware, printer language, or Bluetooth Classic compatibility.
+
+If Android briefly switches away from Power Apps, that is expected. Android deep links are activity-based. The helper minimizes the interruption by closing the receiver activity immediately after starting the print job.

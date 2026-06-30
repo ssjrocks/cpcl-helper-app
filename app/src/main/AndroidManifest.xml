@@ -25,7 +25,14 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
 
+        <activity
+            android:name=".PrintLinkActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:noHistory="true"
+            android:theme="@style/NoDisplayTheme">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -35,6 +42,10 @@
                     android:scheme="freightprint" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".PrintJobService"
+            android:exported="false" />
     </application>
 
 </manifest>
