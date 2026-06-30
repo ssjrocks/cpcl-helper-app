@@ -40,6 +40,7 @@ More detail is in:
 - [Power Apps Integration](docs/power-apps-integration.md)
 - [Testing Guide](docs/testing.md)
 - [CPCL Label Design](docs/cpcl-label-design.md)
+- [Security And Signing](docs/security-and-signing.md)
 
 ## Android Studio
 
