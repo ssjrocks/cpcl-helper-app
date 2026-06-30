@@ -39,6 +39,7 @@ More detail is in:
 - [Architecture](docs/architecture.md)
 - [Power Apps Integration](docs/power-apps-integration.md)
 - [Testing Guide](docs/testing.md)
+- [CPCL Label Design](docs/cpcl-label-design.md)
 
 ## Android Studio
 

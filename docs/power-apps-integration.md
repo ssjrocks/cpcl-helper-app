@@ -92,6 +92,8 @@ Open **Power Apps Simulator**, enter a label code and copies, then tap **Launch 
 
 This proves Android deep linking works before changing the real Power Apps app.
 
+For future custom label layouts, see [CPCL Label Design](cpcl-label-design.md). The current app supports the default `code` and `copies` workflow only, but the docs include suggested `template`, `route`, `dock`, and other optional parameters for later extension.
+
 ## What Integration May Need To Configure
 
 For managed work tablets, the deployment or integration administrator may need to:
